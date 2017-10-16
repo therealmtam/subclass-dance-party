@@ -1,7 +1,7 @@
 // Creates and returns a new dancer object that can step
 var makeDancer = function(top, left, timeBetweenSteps) {
 
-  var dancer = {};
+  var dancer = {};//new key word will bind `dancer` to `this`
 
   // use jQuery to create an HTML <span> tag
   dancer.$node = $('<span class="dancer"></span>');
@@ -28,5 +28,28 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // this one sets the position to some random default point within the body
   dancer.setPosition(top, left);
 
-  return dancer;
+  return dancer;//new keyword will make this line redundant
+};
+
+
+
+
+//pseudoclassical Dancer Factory
+var Dancer = function (top, left, timeBetweenSteps) {
+  this.$node = $('<span class="dancer"></span>');
+  this.step(timeBetweenSteps);
+  this.setPosition(top, left);
+};
+
+//Dancer Methods
+Dancer.prototype.step = function (timeBetweenSteps) {
+  setTimeout(this.step, timeBetweenSteps);
+};
+
+Dancer.prototype.setPosition = function (top, left) {
+  var styleSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings);
 };

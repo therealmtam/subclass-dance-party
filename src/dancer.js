@@ -19,3 +19,13 @@ Dancer.prototype.setPosition = function (top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+Dancer.prototype.lineUp = function () {
+  var oldHeight = this.$node.css('top');
+  this.oldHeight = oldHeight;
+  console.log(oldHeight);
+  var midpoint = $("body").height() / 2;
+  midpoint = midpoint + 'px';
+  this.$node.css('top', midpoint);
+  
+};

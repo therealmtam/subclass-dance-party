@@ -43,7 +43,8 @@ var Dancer = function (top, left, timeBetweenSteps) {
 
 //Dancer Methods
 Dancer.prototype.step = function (timeBetweenSteps) {
-  setTimeout(this.step, timeBetweenSteps);
+  setTimeout(this.step.bind(this, timeBetweenSteps), timeBetweenSteps);
+
 };
 
 Dancer.prototype.setPosition = function (top, left) {

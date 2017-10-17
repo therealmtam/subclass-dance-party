@@ -13,9 +13,14 @@ SizeDancer.prototype.step = function (timeBetweenSteps) {
   var oldRadius = this.$node.css('border-radius');
   
   if (oldRadius === '10px') {
-    this.$node.css('border-radius', '0px');   
+    this.$node.css('border-radius', '6px');   
+  } else if (oldRadius === '6px') {
+    this.$node.css('border-radius', '0px');
+  } else if (oldRadius === '0px') {
+    this.$node.css('border-radius', '4px');
   } else {
     this.$node.css('border-radius', '10px');
   }
+  
     
 };

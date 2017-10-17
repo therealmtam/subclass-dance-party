@@ -13,6 +13,14 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+.title, .addColorfulButton{
+  padding:5px 12px;
+  float:right;
+}
+.title, .addSizeButton{
+  padding:5px 12px;
+  float:right;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -23,5 +31,18 @@ body, a:link, a:visited, a:active{
 .dancer{
   border:10px solid red;
   border-radius:10px;
+  position:absolute;
+}
+.colorfulDancer{
+  display: block;
+  border:10px; 
+  border-style: solid;
+  border-radius:10px;
+  position:absolute;
+}
+.sizeDancer{
+  display: block;
+  border:10px solid blue; 
+  border-radius:0px;
   position:absolute;
 }

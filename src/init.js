@@ -34,10 +34,8 @@ $(document).ready(function() {
   $('.lineUp').on('click', function (event) {
     for (var i = 0; i < window.dancers.length; i++) {
       var currentDancer = window.dancers[i];
-      console.log(currentDancer.$node.css('top'));
-      Dancer.prototype.lineUp.call(currentDancer);
+      Dancer.prototype.lineUp.call(currentDancer, i);
     }
-    
   });
 });
 

@@ -20,12 +20,15 @@ Dancer.prototype.setPosition = function (top, left) {
   this.$node.css(styleSettings);
 };
 
-Dancer.prototype.lineUp = function () {
+Dancer.prototype.lineUp = function (spot) {
   var oldHeight = this.$node.css('top');
   this.oldHeight = oldHeight;
-  console.log(oldHeight);
   var midpoint = $("body").height() / 2;
+  var spotWidth = $("body").width() / window.dancers.length;
+  spotWidth = spotWidth * spot;
+  spotWidth = spotWidth + 'px';
   midpoint = midpoint + 'px';
   this.$node.css('top', midpoint);
+  this.$node.css('left', spotWidth);
   
 };

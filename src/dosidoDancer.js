@@ -10,13 +10,14 @@ DoSiDoDancer.prototype = Object.create(Dancer.prototype);
 DoSiDoDancer.prototype.constructor = DoSiDoDancer;
 
 DoSiDoDancer.prototype.step = function(timeBetweenSteps) {
-  
+  timeBetweenSteps = (Math.random() * 5) + 5;
   Dancer.prototype.step.call(this, timeBetweenSteps);
-  timeBetweenSteps = timeBetweenSteps / 4;
+
+ 
+  
   if (!this.cTup) {
     this.cTup = this.renderCoordinates(this.top, this.left);
   }
-  console.log(this.cTup);
   var styleSettings = {
     top: this.cTup[0][this.lastPositionIndex],
     left: this.cTup[1][this.lastPositionIndex]

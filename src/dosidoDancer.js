@@ -2,6 +2,7 @@ var DoSiDoDancer = function (top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<div class="dancer"></div>');
   this.$node.addClass('doSiDoDancer');
   this.lastPositionIndex = 0;
 };
@@ -70,4 +71,30 @@ DoSiDoDancer.prototype.renderCoordinates = function (top, left) {
     returnArr.push(xValues, yValues);
     return returnArr;
   }(shortestRadius, 128, closestTop, closestLeft));
+};
+
+DoSiDoDancer.prototype.lineUp = function (spot) {
+  var midpoint = $("body").height() / 2;
+  var spotWidth = $("body").width() / window.dancers.length;
+  spotWidth = spotWidth * spot;
+  console.log(this);
+  
+  this.cTup = (function x (radius, steps, centerX, centerY) {
+    var returnArr = [];
+    var xValues = [centerX];
+    var yValues = [centerY];
+
+    for (var i = 0; i < steps; i++) {
+      xValues[i] = (centerX + radius * Math.cos(2 * Math.PI * i / steps));
+      yValues[i] = (centerY + radius * Math.sin(2 * Math.PI * i / steps));
+    }
+    returnArr.push(xValues, yValues);
+    return returnArr;
+  }(20, 128, midpoint, spotWidth));
+  
+  spotWidth = spotWidth + 'px';
+  midpoint = midpoint + 'px';
+  this.$node.css('top', midpoint);
+  this.$node.css('left', spotWidth);
+  
 };

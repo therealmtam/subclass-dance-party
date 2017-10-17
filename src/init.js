@@ -34,7 +34,7 @@ $(document).ready(function() {
   $('.lineUp').on('click', function (event) {
     for (var i = 0; i < window.dancers.length; i++) {
       var currentDancer = window.dancers[i];
-      Dancer.prototype.lineUp.call(currentDancer, i);
+      currentDancer.lineUp.call(currentDancer, i);
     }
   });
 });

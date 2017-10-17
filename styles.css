@@ -3,6 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
+  background-image: url("src/space_dance_floor.jpg");
   background-color:#444;
   font-size: 18px;
 }
